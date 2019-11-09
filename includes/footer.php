@@ -10,11 +10,11 @@
             </div>
 
             <div class="col-md-6 mb-4">
-                <img class="footerLogo" src="<?php echo $logoLink ?>" /><hr>
-                <form class="input-group">
-                    <input id="newsLetter" type="text" class="form-control form-control-sm newsletter" placeholder="S'inscrire a la newsletter" aria-label="Your email" aria-describedby="basic-addon2">
+                <img class="footerLogo" src="<?php echo $infos['logoImg'] ?>" /><hr>
+                <form class="input-group" action="./" method="post">
+                    <input name="newsletter" type="mail" class="form-control form-control-sm newsletter" placeholder="S'inscrire a la newsletter" aria-label="Your email" aria-describedby="basic-addon2">
                     <div class="input-group-append">
-                        <button class="btn btn-dark btn-outline-white my-0" type="button">S'inscrire</button>
+                        <button name="sumbmitNewsLetter" class="btn btn-dark btn-outline-white my-0" type="sumbit">S'inscrire</button>
                     </div>
                 </form>
 

@@ -46,6 +46,10 @@ a:hover {
     padding: 50px;
 }
 
+.content-img img {
+    object-fit: cover;
+}
+
 .content-text {
     padding: 50px;
 }

@@ -9,7 +9,7 @@ require('utils/config.php');
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title><?php echo $config['title'] ?></title>
     <link rel="stylesheet" href="assets/style/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style/css/style.css">
     <link rel="stylesheet" href="assets/style/css/all.min.css">
@@ -17,11 +17,11 @@ require('utils/config.php');
 
 <nav class="navbar navbar-light navbar-expand-lg social-navbar ">
     <div class="container">
-        <a class="navbar-brand" href="tel:<?php echo $phone ?>">Tél : <?php echo $phone ?></a>
+        <a class="navbar-brand" href="tel:<?php echo $infos['phone'] ?>">Tél : <?php echo $infos['phone'] ?></a>
         <div class="d-flex flex-row order-2 order-lg-3">
             <ul class="navbar-nav flex-row">
-                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $facebookLink; ?>"><span class="fab fa-facebook-f"></span></a></li>
-                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $instraLink; ?>"><span class="fab fa-instagram"></span></a></li>
+                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $infos['fb'] ?>"><span class="fab fa-facebook-f"></span></a></li>
+                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $infos['insta'] ?>"><span class="fab fa-instagram"></span></a></li>
             </ul>
         </div>
     </div>
@@ -42,7 +42,7 @@ require('utils/config.php');
             </ul>
         </div>
         <div class="mx-auto order-0">
-            <a class="navbar-brand mx-auto" href="#"><img class="logo" src="<?php echo $logoLink ?>" /></a>
+            <a class="navbar-brand mx-auto" href="#"><img class="logo" src="<?php echo $infos['logoImg'] ?>" /></a>
             <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target=".dual-collapse2">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -53,7 +53,7 @@ require('utils/config.php');
                     <a class="nav-link" href="#">A propos</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Galerie</a>
+                    <a class="nav-link" href="#">Contact</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Promos</a>
