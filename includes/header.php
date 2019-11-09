@@ -1,4 +1,7 @@
-<?php require('utils/db.php'); ?>
+<?php
+require('utils/db.php');
+require('utils/config.php');
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,5 +14,53 @@
     <link rel="stylesheet" href="assets/style/css/style.css">
     <link rel="stylesheet" href="assets/style/css/all.min.css">
 </head>
+
+<nav class="navbar fixed-top navbar-light navbar-expand-lg social-navbar ">
+    <div class="container">
+        <a class="navbar-brand" href="tel:<?php echo $phone ?>">Tél : <?php echo $phone ?></a>
+        <div class="d-flex flex-row order-2 order-lg-3">
+            <ul class="navbar-nav flex-row">
+                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $facebookLink; ?>"><span class="fab fa-facebook-f"></span></a></li>
+                <li class="nav-item"><a class="nav-link px-2" href="<?php echo $instraLink; ?>"><span class="fab fa-instagram"></span></a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<nav class="navbar navbar-expand-md navbar-light bg-light menu-navbar">
+    <div class="container">
+        <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="//codeply.com">Tarifs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galerie</a>
+                </li>
+            </ul>
+        </div>
+        <div class="mx-auto order-0">
+            <a class="navbar-brand mx-auto" href="#"><img class="logo" src="<?php echo $logoLink ?>" /></a>
+            <button class="navbar-toggler navbar-burger" type="button" data-toggle="collapse" data-target=".dual-collapse2">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="#">A propos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Galerie</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Un lien</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <body>

@@ -1,0 +1,22 @@
+body {
+    background-color: #eee;
+}
+
+.social-navbar {
+    background-color: #fbd8cc;
+}
+
+.menu-navbar {
+    margin-top: 55px;
+    min-height: 100px;
+    background-color: #fff !important;
+}
+
+.logo {
+    height: 80px;
+}
+
+.navbar-burger {
+    position: absolute;
+    right: 15px;
+}
