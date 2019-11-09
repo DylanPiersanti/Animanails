@@ -15,7 +15,7 @@ require('utils/config.php');
     <link rel="stylesheet" href="assets/style/css/all.min.css">
 </head>
 
-<nav class="navbar fixed-top navbar-light navbar-expand-lg social-navbar ">
+<nav class="navbar navbar-light navbar-expand-lg social-navbar ">
     <div class="container">
         <a class="navbar-brand" href="tel:<?php echo $phone ?>">Tél : <?php echo $phone ?></a>
         <div class="d-flex flex-row order-2 order-lg-3">
@@ -56,7 +56,7 @@ require('utils/config.php');
                     <a class="nav-link" href="#">Galerie</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Un lien</a>
+                    <a class="nav-link" href="#">Promos</a>
                 </li>
             </ul>
         </div>
