@@ -509,3 +509,20 @@ body {
 .adminLogo img {
     width: 100%;
 }
+
+.header-menu {
+    text-align: center;
+}
+
+.menuButtonClose {
+    display: none;
+}
+
+@media (max-width: 770px) {
+    #sidebar {
+        display: none;
+    }
+    .menuButtonClose {
+        display: inline;
+    }
+}
