@@ -1,8 +1,7 @@
-<?php require('includes/adminHeader.php') ?>
-
-<button style="margin : 5px;" class="btn btn-dark menuButtonOpen">
-    Menu
-</button>
+<?php 
+require('includes/adminHeader.php');
+require('includes/newsEditor.php');
+?>
 
 <div class="page-wrapper chiller-theme toggled">
     <a id="show-sidebar" class="btn btn-sm btn-dark" href="#">
@@ -31,9 +30,13 @@
             </div>
 
             <?php echo include('includes/adminMenu.php') ?>
+
+
             <!-- sidebar-menu  -->
         </div>
-        <!-- sidebar-content  -->
+
+        
+
         <div class="sidebar-footer">
             <!-- <a href="#">
                 <i class="fa fa-bell"></i>
@@ -55,36 +58,30 @@
     <!-- sidebar-wrapper  -->
     <main class="page-content">
         <div class="container-fluid">
-            <h2>Panel administration</h2>
+            <h2>Ajouter/Editer une news</h2>
             <hr>
             <div class="row">
-                <div class="form-group col-md-12">
-                    <p>Bienvenue sur <b><?php echo $_SESSION['name'] ?></b> sur le panel d'administration</p>
-                    <p>
-                        Voici quelques informations sur vous : <br/>
-                        <strong>Adresse mail :</strong> <?php echo $_SESSION['email'] ?> <br/>
-                        <strong>Pseudo :</strong> <?php echo $_SESSION['pseudo'] ?>
-                    </p>
-                </div>
-                <div class="form-group col-md-12">
-                    <a href="" class="btn btn-success">Profil</a>
-                    <a href="" class="btn btn-danger">Deconnexion</a>
-                </div>
+                <form action="" method="post">
+                    <input type="text" name="imageLink" placeholder="lien de l'image" />
+                    <input type="text" name="newsTitle" placeholder="titre de la news" />
+                    <textarea name="newsContent">
+
+                    </textarea>
+
+                    <button class="btn btn-primary" name="submitNews" type="submit">envoyer</button>
+                </form>
             </div>
+
             <h5>Informations générales :</h5>
             <hr>
             <div class="row">
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                    <!-- content left -->
-                </div>
-                <div class="col-xs-12 col-sm-6 col-md-6 col-lg-4">
-                    <!-- content right -->
-                </div>
+               
             </div>
         </div>
 
     </main>
     <!-- page-content" -->
 </div>
+        
 
-<?php require('includes/footer.php') ?>
+        <?php require('includes/footer.php') ?>

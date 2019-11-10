@@ -10,7 +10,7 @@
             </a>
         </li>
         <li class="">
-            <a href="#">
+            <a href="editNews.php">
                 <i class="fa fa-newspaper"></i>
                 <span>News</span>
             </a>
