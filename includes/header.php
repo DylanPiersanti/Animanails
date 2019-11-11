@@ -31,10 +31,10 @@ require('utils/config.php');
         <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Accueil</a>
+                    <a class="nav-link" href="./">Accueil</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="//codeply.com">Tarifs</a>
+                    <a class="nav-link" href="tarifs.php">Tarifs</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#">Galerie</a>

@@ -74,3 +74,17 @@ h1 {
 hr {
     background-color: #fbd8cc;
 }
+
+.service {
+    text-align: left;
+    float: left;
+}
+
+.price {
+    text-align: right;
+    float: right;
+}
+
+.decoPrice {
+    text-align: center;
+}

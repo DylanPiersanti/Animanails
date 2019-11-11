@@ -12,7 +12,12 @@
             <div class="content-text">
                 <h1><?php echo $news['title'] ?></h1>
                 <p>
-                    <?php echo $news['texte'] ?>
+                    <?php 
+                    $newsText = substr($news['texte'], 0, 1000);
+                    echo $newsText;
+                    if (strlen($newsText) > 999) {
+                        echo '...';
+                    } ?>
                 </p>
                 <a href="#" class="btn btn-dark">Lire la suite</a>
             </div>
