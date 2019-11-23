@@ -1,7 +1,7 @@
 <?php require('includes/header.php'); ?>
 <?php include('includes/carousel.php') ?>
 <main>
-    <?php foreach ($setNews as $news) { ?>
+    <?php foreach ($setActiveNews as $news) { ?>
     <div class="row" style="width: 100%;">
         <div class="col-lg-6 ">
             <div class="content-img">

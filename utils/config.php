@@ -12,10 +12,15 @@
     $carouselImg->execute();
     $carousel = $carouselImg->fetch();
 
-    //News content
-    $news = $db->prepare("SELECT * FROM news");
-    $news->execute();
-    $setNews = $news->fetchAll();
+    //News content (active)
+    $activeNews = $db->prepare("SELECT * FROM news WHERE active = 1");
+    $activeNews->execute();
+    $setActiveNews = $activeNews->fetchAll();
+
+    // News content (disabled)
+    $disabledNews = $db->prepare("SELECT * FROM news WHERE active = 0");
+    $disabledNews->execute();
+    $setDisabledNews = $disabledNews->fetchAll();
 
     //newsletter register
 
