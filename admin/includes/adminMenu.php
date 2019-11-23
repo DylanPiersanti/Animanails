@@ -4,7 +4,7 @@
             <span>Menu general</span>
         </li>
         <li class="">
-            <a href="#">
+            <a href="editTarifs.php">
                 <i class="fa fa-tags"></i>
                 <span>Tarifs</span>
             </a>

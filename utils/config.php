@@ -32,5 +32,8 @@
     $newsletter->execute();
     
     }
+
+    // edition des tarifs
+
     
 ?>

@@ -75,8 +75,10 @@ include('utils/princing.php');
     </div>
         <div class="col-12 decoPrice">
         <span>Décos <b>GRATUITES</b> (strass, spiderGel, paillettes, ...)</span> <br />
-        <span><b><?php echo $setPriceDeco['type'] ?></b> ....... <?php echo $setPriceDeco['tarifs'] . ' €' ?></span>
-        </div>
+        <?php foreach ($setPriceDeco as $decoPrice) { ?>
+        <span><b><?php echo $decoPrice['type'] ?></b> ....... <?php echo $decoPrice['tarifs'] . ' €' ?></span>
+        <?php } ?> 
+    </div>
 
     <hr>
 </div>

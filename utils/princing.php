@@ -24,4 +24,4 @@
     //deco
     $decoPrice = $db->prepare("SELECT * FROM tarifs WHERE categorie = 'decos'");
     $decoPrice->execute();
-    $setPriceDeco = $decoPrice->fetch(); 
+    $setPriceDeco = $decoPrice->fetchAll(); 
