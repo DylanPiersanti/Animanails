@@ -158,10 +158,6 @@ $db = dbConnect();
             <tbody>
                 <?php foreach ($setDisabledNews as $newsList) {
 
-                    if (!isset($newsList)) {
-
-                    } else {
-
                     $newsId = $newsList['id'];
                     $newsTitle = $newsList['title'];
                     $newsText = substr($newsList['texte'], 0, 255);
@@ -186,7 +182,7 @@ $db = dbConnect();
                     </tr>
                 <?php 
                 }
-            } ?>
+            ?>
             </tbody>
         </table>
     </main>

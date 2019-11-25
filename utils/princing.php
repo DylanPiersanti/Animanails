@@ -25,3 +25,32 @@
     $decoPrice = $db->prepare("SELECT * FROM tarifs WHERE categorie = 'decos'");
     $decoPrice->execute();
     $setPriceDeco = $decoPrice->fetchAll(); 
+
+    // setPrices actives
+    $setPrices = $db->prepare("SELECT * FROM tarifs WHERE actif = 1");
+    $setPrices->execute();
+    $setPriceAdmin = $setPrices->fetchAll(); 
+
+    //setPrices no actives
+    $setPricesNa = $db->prepare("SELECT * FROM tarifs WHERE actif = 0");
+    $setPricesNa->execute();
+    $setPriceNonA = $setPricesNa->fetchAll(); 
+
+
+    if (isset($_POST['disablePrice'])) {
+        
+    } else {
+        $myId = isset($_GET['disablePrice']) ? (int) $_GET['disablePrice'] : null;
+        $disable = $db->prepare('UPDATE tarifs SET actif = 0 WHERE id = :tarifId');
+        $disable->bindParam(':tarifId', $myId, PDO::PARAM_INT);
+        $disable->execute();
+    }
+
+    if (isset($_POST['enablePrice'])) {
+        
+    } else {
+        $myId = isset($_GET['enablePrice']) ? (int) $_GET['enablePrice'] : null;
+        $disable = $db->prepare('UPDATE tarifs SET actif = 1 WHERE id = :tarifId');
+        $disable->bindParam(':tarifId', $myId, PDO::PARAM_INT);
+        $disable->execute();
+    }

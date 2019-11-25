@@ -56,10 +56,61 @@ require('../utils/princing.php');
         </div>
     </nav>
     <!-- sidebar-wrapper  -->
-    <main class="page-content col-12">
+    <main class="page-content col-12" id="main">
         <div class="container-fluid">
             <h2>Editer les tarifs</h2>
             <hr>
+        </div>
+
+        <div class="alert alert-success" role="alert">
+            Tarifs activés :
+        </div>
+
+        <table id="test" class="table table-striped">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Catégorie</th>
+                    <th scope="col">Tarif (€)</th>
+                    <th scope="col">Options</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($setPriceAdmin as $setPrice) {
+
+                    $priceId = $setPrice['id'];
+                    $priceType = $setPrice['type'];
+                    $priceTarif = $setPrice['tarifs'];
+                    $priceCat = $setPrice['categorie'];
+
+                    ?>
+                    <tr>
+                        <th scope="row"><?= $priceId ?></th>
+                        <td><?= $priceType ?></td>
+                        <td><?= $priceCat ?></td>
+                        <td><input type="number" value="<?= $priceTarif ?>" min="0" /></td>
+
+                        <td>
+                            <form action="">
+                                <button id="button" class="btn-danger" name="disablePrice" value="<?= $priceId ?>">
+                                    Désactiver
+                                </button>
+                                <button class="btn-warning" name="editPrice" value="<?= $priceId ?>">
+                                    Editer
+                                </button>
+                            </form>
+                        </td>
+
+                    </tr>
+                <?php
+                }
+                ?>
+            </tbody>
+        </table>
+
+        <div class="alert alert-danger" role="alert">
+            Tarifs désactivées :
         </div>
 
         <table class="table table-striped">
@@ -73,27 +124,27 @@ require('../utils/princing.php');
                 </tr>
             </thead>
             <tbody>
-                <?php foreach ($setPriceNatural as $natural) {
+                <?php foreach ($setPriceNonA as $setPrice) {
 
-                    $naturalId = $natural['id'];
-                    $naturalType = $natural['type'];
-                    $naturalTarifs = $natural['tarifs'];
-                    $naturalCat = $natural['categorie'];
+                    $priceId = $setPrice['id'];
+                    $priceType = $setPrice['type'];
+                    $priceTarif = $setPrice['tarifs'];
+                    $priceCat = $setPrice['categorie'];
 
                     ?>
                     <tr>
-                        <th scope="row"><?= $naturalId ?></th>
-                        <td><?= $naturalType ?></td>
-                        <td><?= $naturalCat ?></td>
-                        <td><input type="number" value="<?= $naturalTarifs ?>" min="0" /></td>
+                        <th scope="row"><?= $priceId ?></th>
+                        <td><?= $priceType ?></td>
+                        <td><?= $priceCat ?></td>
+                        <td><input type="number" value="<?= $priceTarif ?>" min="0" /></td>
 
                         <td>
                             <form action="">
-                                <button class="btn-danger" name="disableNews" value="<?= $naturalId ?>">
-                                    Supprimer
+                                <button class="btn-success" name="enablePrice" value="<?= $priceId ?>">
+                                    Activer
                                 </button>
-                                <button class="btn-warning" name="disableNews" value="<?= $naturalId ?>">
-                                    Editer
+                                <button class="btn-danger" name="deletePrice" value="<?= $priceId ?>">
+                                    Supprimer
                                 </button>
                             </form>
                         </td>
@@ -102,168 +153,6 @@ require('../utils/princing.php');
                 <?php
                 }
                 ?>
-
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Catégorie</th>
-                        <th scope="col">Tarif (€)</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-
-                <?php foreach ($setPriceRall as $rallongement) {
-
-                    $rallongementId = $rallongement['id'];
-                    $rallongementType = $rallongement['type'];
-                    $rallongementTarifs = $rallongement['tarifs'];
-                    $rallongementCat = $rallongement['categorie'];
-
-                    ?>
-                    <tr>
-                        <th scope="row"><?= $rallongementId ?></th>
-                        <td><?= $rallongementType ?></td>
-                        <td><?= $rallongementCat ?></td>
-                        <td><input type="number" value="<?= $rallongementTarifs ?>" min="0" /></td>
-
-                        <td>
-                            <form action="">
-                                <button class="btn-danger" name="disableNews" value="<?= $rallongementId ?>">
-                                    Supprimer
-                                </button>
-                                <button class="btn-warning" name="disableNews" value="<?= $rallongementId ?>">
-                                    Editer
-                                </button>
-                            </form>
-                        </td>
-
-                    </tr>
-                <?php
-                }
-                ?>
-
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Catégorie</th>
-                        <th scope="col">Tarif (€)</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-
-                <?php foreach ($setPriceDeposes as $deposes) {
-
-                    $deposesId = $deposes['id'];
-                    $deposesType = $deposes['type'];
-                    $deposesTarifs = $deposes['tarifs'];
-                    $deposesCat = $deposes['categorie'];
-
-                    ?>
-                    <tr>
-                        <th scope="row"><?= $deposesId ?></th>
-                        <td><?= $deposesType ?></td>
-                        <td><?= $deposesCat ?></td>
-                        <td><input type="number" value="<?= $deposesTarifs ?>" min="0" /></td>
-
-                        <td>
-                            <form action="">
-                                <button class="btn-danger" name="disableNews" value="<?= $deposesId ?>">
-                                    Supprimer
-                                </button>
-                                <button class="btn-warning" name="disableNews" value="<?= $deposesId ?>">
-                                    Editer
-                                </button>
-                            </form>
-                        </td>
-
-                    </tr>
-                <?php
-                }
-                ?>
-
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Catégorie</th>
-                        <th scope="col">Tarif (€)</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-
-                <?php foreach ($setPriceRemp as $Remp) {
-
-                    $RempId = $Remp['id'];
-                    $RempType = $Remp['type'];
-                    $RempTarifs = $Remp['tarifs'];
-                    $RempCat = $Remp['categorie'];
-
-                    ?>
-                    <tr>
-                        <th scope="row"><?= $RempId ?></th>
-                        <td><?= $RempType ?></td>
-                        <td><?= $RempCat ?></td>
-                        <td><input type="number" value="<?= $RempTarifs ?>" min="0" /></td>
-
-                        <td>
-                            <form action="">
-                                <button class="btn-danger" name="disableNews" value="<?= $RempId ?>">
-                                    Supprimer
-                                </button>
-                                <button class="btn-warning" name="disableNews" value="<?= $RempId ?>">
-                                    Editer
-                                </button>
-                            </form>
-                        </td>
-
-                    </tr>
-                <?php
-                }
-                ?>
-
-                <thead>
-                    <tr>
-                        <th scope="col">ID</th>
-                        <th scope="col">Type</th>
-                        <th scope="col">Catégorie</th>
-                        <th scope="col">Tarif (€)</th>
-                        <th scope="col">Options</th>
-                    </tr>
-                </thead>
-
-                <?php foreach ($setPriceDeco as $deco) {
-
-                    $decoId = $deco['id'];
-                    $decoType = $deco['type'];
-                    $decoTarifs = $deco['tarifs'];
-                    $decoCat = $deco['categorie'];
-
-                    ?>
-                    <tr>
-                        <th scope="row"><?= $decoId ?></th>
-                        <td><?= $decoType ?></td>
-                        <td><?= $decoCat ?></td>
-                        <td><input type="number" value="<?= $decoTarifs ?>" min="0" /></td>
-
-                        <td>
-                            <form action="" method="post">
-                                <button class="btn-danger" name="disableNews" value="<?= $decoId ?>">
-                                    Supprimer
-                                </button>
-                                <button class="btn-warning" name="editDecos" value="<?= $newTarif ?>">
-                                    Editer
-                                </button>
-                            </form>
-                        </td>
-
-                    </tr>
-                <?php
-                }
-                ?>
-
-
             </tbody>
         </table>
 
